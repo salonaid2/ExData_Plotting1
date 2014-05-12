@@ -1,6 +1,6 @@
 #Setting working directory
 
-setwd("D:\\SALONI\\Learning\\Coursera\\datasciencecoursera\\ExploratoryDataAnalysis")
+setwd("D:\\<removed path>\\ExploratoryDataAnalysis")
 
 # Creating a new directory
 
@@ -38,17 +38,11 @@ data1$DateTime <-strptime(paste(data1$Date, data1$Time), "%d/%m/%Y %H:%M:%S")
 
 head(data1,2)
 
-# Creating the weekday variable
-
-data1$Weekday<- weekdays(data1$Date)
-head(data1,2)
-class(data1$Weekday)
-table(data1$Weekday)
-
 # Plotting the second graph in the PNG graphics device 
 
 png(file="./proj1/ExData_Plotting1/plot2.png",width=480,height=480, units="px")
 
-plot(data1$DateTime,data1$Global_active_power,type="l")
+plot(data1$DateTime,data1$Global_active_power,type="l", 
+     xlab="",ylab="Global Active Power (kilowatts)")
 
 dev.off()
