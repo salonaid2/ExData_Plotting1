@@ -38,11 +38,12 @@ data1$DateTime <-strptime(paste(data1$Date, data1$Time), "%d/%m/%Y %H:%M:%S")
 
 head(data1,2)
 
-# Plotting the second graph in the PNG graphics device 
+# Plotting the third graph in the PNG graphics device 
 
 png(file="./proj1/ExData_Plotting1/plot3.png",width=480,height=480, units="px")
 
-plot(data1$DateTime,data1$Global_active_power,type="l", 
-     xlab="",ylab="Global Active Power (kilowatts)")
-
+plot(data1$DateTime,data1$Sub_metering_1, col="black",type="l", xlab="",ylab="Energy Sub metering")
+lines(data1$DateTime,data1$Sub_metering_2, col="red")
+lines(data1$DateTime,data1$Sub_metering_3, col="blue")
+legend ("topright",lty=1,col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 dev.off()
